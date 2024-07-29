@@ -1,0 +1,48 @@
+{
+    "name": "honeystone/reading-time",
+    "description": "A simple reading time calculator for PHP.",
+    "license": "MIT",
+    "keywords": [
+        "honeystone",
+        "reading-time"
+    ],
+    "authors": [
+        {
+            "name": "George Palmer",
+            "email": "george@honeystone.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://honeystone.com",
+    "require": {
+        "php": "^8.0",
+        "nesbot/carbon": "^3.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "pestphp/pest": "^2.34",
+        "phpstan/phpstan": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Honeystone\\ReadingTime\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Honeystone\\ReadingTime\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
