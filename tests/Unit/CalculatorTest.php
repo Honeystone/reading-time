@@ -69,3 +69,24 @@ it('return only seconds if less than a min', function (): void {
 
     expect(reading_time($text, ['seconds' => true]))->toBe('50s');
 });
+
+it('calculates average without html', function (): void {
+
+    $text = implode(' ', array_fill(0, 500, '<span>word</span>'));
+
+    expect(reading_time($text, [
+        'seconds' => true,
+        'short' => false,
+    ]))->toBe('2 minutes 5 seconds');
+});
+
+it('calculates average with html', function (): void {
+
+    $text = implode(' ', array_fill(0, 500, '<span>word</span>'));
+
+    expect(reading_time($text, [
+        'seconds' => true,
+        'short' => false,
+        'countHtml' => true,
+    ]))->toBe('6 minutes 15 seconds');
+});

@@ -24,6 +24,7 @@ final class Calculator
         'seconds' => false,
         'format' => null,
         'short' => true,
+        'countHtml' => false,
     ];
 
     /**
@@ -74,7 +75,11 @@ final class Calculator
 
     private function countWords(string $text): int
     {
-        return str_word_count(strip_tags($text), 0, $this->localConfig['additionalCharacters']);
+        if (!$this->localConfig['countHtml']) {
+            $text = strip_tags($text);
+        }
+
+        return str_word_count($text, 0, $this->localConfig['additionalCharacters']);
     }
 
     private function toInterval(float $mins): ?string

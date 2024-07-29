@@ -53,6 +53,7 @@ reading_time()->configure([
     'seconds' => false,
     'format' => null,
     'short' => true,
+    'countHtml' => false,
 ]);
 ```
 
