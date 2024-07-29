@@ -58,14 +58,14 @@ it('calculates average reading time long form', function (): void {
 
 it('return null if less than a min', function (): void {
 
-    $text = implode(' ', array_fill(0, 1000, 'word'));
+    $text = implode(' ', array_fill(0, 200, 'word'));
 
-    expect(reading_time(''))->toBeNull();
+    expect(reading_time($text))->toBeNull();
 });
 
 it('return only seconds if less than a min', function (): void {
 
-    $text = implode(' ', array_fill(0, 1000, 'word'));
+    $text = implode(' ', array_fill(0, 200, 'word'));
 
-    expect(reading_time('', ['seconds' => true]))->toBe('0s');
+    expect(reading_time($text, ['seconds' => true]))->toBe('50s');
 });
