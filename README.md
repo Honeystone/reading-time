@@ -6,7 +6,7 @@
 ![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/honeystone/reading-time/php)
 [![Static Badge](https://img.shields.io/badge/honeystone-fa6900)](https://honeystone.com)
 
-Use this simple reading time package to calculate the expected reading time for any given body of text.
+Use this very simple reading time package to calculate the expected reading time for any given body of text.
 
 ## Support us
 
@@ -25,6 +25,36 @@ composer require honeystone/reading-time
 
 ## Usage
 
+```php
+//average reading time
+reading_time($text); //5m
+
+//fast reading time
+reading_time()->fast($text) //4m
+
+//slow reading time
+reading_time()->slot($text) //6m
+
+//include seconds
+reading_time(config: ['seconds' => true]); //5m 10s
+
+//longform
+reading_time(config: ['short' => false]); //5 minutes
+
+//configure globally
+reading_time()->configure(['short' -> false], true);
+
+//all available config & defaults
+reading_time()->configure([
+    'slowWpm' => 180,
+    'averageWpm' => 240,
+    'fastWpm' => 320,
+    'additionalCharacters' => '',
+    'seconds' => false,
+    'format' => null,
+    'short' => true,
+]);
+```
 
 ## Changelog
 

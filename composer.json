@@ -1,6 +1,6 @@
 {
     "name": "honeystone/reading-time",
-    "description": "A simple reading time calculator for PHP.",
+    "description": "A very simple reading time calculator for PHP.",
     "license": "MIT",
     "keywords": [
         "honeystone",
