@@ -33,7 +33,7 @@ reading_time($text); //5m
 reading_time()->fast($text) //4m
 
 //slow reading time
-reading_time()->slot($text) //6m
+reading_time()->slow($text) //6m
 
 //include seconds
 reading_time(config: ['seconds' => true]); //5m 10s
